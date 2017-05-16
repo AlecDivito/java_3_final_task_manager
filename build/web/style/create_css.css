@@ -1,0 +1,46 @@
+
+/* 
+    Created on : Nov 24, 2016, 4:03:02 PM
+    Author     : alecdivito
+*/
+
+body {    background-color: orange;}
+.friend-box {
+	display: inline-block;
+}
+	    	
+.friend-box-item {
+    clear: both;
+}
+            
+main {
+    width: 800px; 
+    position: fixed;
+    bottom:calc(50% - 75px);
+    left:50%;
+    margin: -250px -420px;
+    padding: 20px;
+    background-color: white; 
+    box-shadow: 0 0 10px #888888;
+}
+
+ul {
+	width: 300px;
+	height: 200px;
+	box-shadow: 0 0 10px #888888;
+	list-style-type: none;
+	overflow: auto;
+    padding: 0;
+}
+ul p {float: left;margin: 0;padding: 0;}
+ul img {float: left;}
+li {
+	width: 95%;
+	height: 50px;
+	cursor: pointer;
+	padding: 4px;
+	border-bottom: 1px solid black;
+}
+li:hover {background-color: lightblue;}
+img { width: 50px;height: 50px;}
+

@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 20, 2016 9:57:50 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.proj.bean.User" table="user" catalog="Java3" optimistic-lock="version">
+        <id name="userid" type="int">
+            <column name="userid" />
+            <generator class="increment" />
+        </id>
+        <property name="username" type="string">
+            <column name="username" length="64" not-null="true" />
+        </property>
+        <property name="password" type="string">
+            <column name="password" length="64" not-null="true" />
+        </property>
+        <property name="firstname" type="string">
+            <column name="firstname" length="64" not-null="true" />
+        </property>
+        <property name="lastname" type="string">
+            <column name="lastname" length="64" not-null="true" />
+        </property>
+        <property name="company" type="string">
+            <column name="company" length="64" not-null="true" />
+        </property>
+        <property name="profilepic" type="string">
+            <column name="profilepic" length="32" />
+        </property>
+        <set name="projects" table="project" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="adminid" not-null="true" />
+            </key>
+            <one-to-many class="com.proj.bean.Project" />
+        </set>
+        <set name="subTasks" table="subTask" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="userid" not-null="true" />
+            </key>
+            <one-to-many class="com.proj.bean.SubTask" />
+        </set>
+        <set name="projGroups" table="projGroup" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="userid" not-null="true" />
+            </key>
+            <one-to-many class="com.proj.bean.ProjGroup" />
+        </set>
+    </class>
+</hibernate-mapping>

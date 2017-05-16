@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 20, 2016 9:57:50 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.proj.bean.SubTask" table="subTask" catalog="Java3" optimistic-lock="version">
+        <id name="subtaskid" type="int">
+            <column name="subtaskid" />
+            <generator class="increment" />
+        </id>
+        <many-to-one name="task" class="com.proj.bean.Task" fetch="select">
+            <column name="taskid" not-null="true" />
+        </many-to-one>
+        <many-to-one name="user" class="com.proj.bean.User" fetch="select">
+            <column name="userid" not-null="true" />
+        </many-to-one>
+        <property name="subtitle" type="string">
+            <column name="subtitle" length="64" not-null="true" />
+        </property>
+        <property name="subdesc" type="string">
+            <column name="subdesc" length="512" />
+        </property>
+        <property name="actiondesc" type="string">
+            <column name="actiondesc" length="32" />
+        </property>
+        <property name="actiontime" type="timestamp">
+            <column name="actiontime" length="19" />
+        </property>
+        <set name="tags" table="tag" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="subtaskid" not-null="true" />
+            </key>
+            <one-to-many class="com.proj.bean.Tag" />
+        </set>
+    </class>
+</hibernate-mapping>

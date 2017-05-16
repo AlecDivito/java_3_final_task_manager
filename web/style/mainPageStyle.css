@@ -1,0 +1,102 @@
+aside {
+    position: fixed;
+    top: 75px;
+	width: 225px;
+	height: 90%;
+	padding: 20px;
+	text-align: center;
+	background-color: white;
+	border: 1px solid black;
+}
+
+aside img {
+	border-radius: 50%;
+}
+
+main {
+    position: fixed;
+    width: calc(100% - 268px);
+    left: 267px;
+	height: 90%;
+	border: 1px solid black;
+	background: linear-gradient(141deg, #0fb8ad 0%, #1fc8db 51%, #2cb5e8 75%);
+	overflow: auto;
+}
+
+main ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+    position: relative;
+    top: 0;
+    width: 100%;
+}
+
+li {
+    float: left;
+    width: 50%;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+#create {
+	width: 100%;
+	background-color: #999;
+}
+#create a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+#personal { background-color: #4CAF50; }
+#group { background-color: #333; }
+
+.task-pending {
+    width:100%;
+    background-color: aqua;
+}
+.task-pending div {padding: 10px; display: inline-block; float: left; }
+
+.task-pending .text { width: 50%; overflow-x: auto; }
+.task-pending .accept, .task-pending .decline {
+    cursor: pointer;
+    width: 20%;
+    padding: 20px;
+    float: right;
+    border: 1px solid black;
+	transition: box-shadow .25s;
+	-webkit-transition: box-shadow .25s;
+}
+.accept { background-color: green;}
+.decline { background-color: red; }
+.task-pending .accept:hover, .task-pending .decline:hover { 	box-shadow: 0 0 20px #000 }
+
+.task-block {
+    cursor:pointer;
+    float: left;
+	width: calc(50% - 17px);
+    padding: 10px;
+	border: 1px solid black;
+	
+	background-color: lightblue;
+	transition: box-shadow .5s;
+	-webkit-transition: box-shadow .25s;
+}
+.task-block h1, hr{ margin: 10px 0 0 0; padding: 0; }
+.task-block h3 { margin-top: 5px; }
+.task-block:hover {
+	box-shadow: 0 0 20px #000;
+}
+.task-group { display: inline-block; margin: 0 -3px; height: 150px; }
+.task-personal { display: inline-block; margin: 0 -3px; height: 150px;}

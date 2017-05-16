@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 20, 2016 9:57:50 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.proj.bean.Tag" table="tag" catalog="Java3" optimistic-lock="version">
+        <id name="tagid" type="int">
+            <column name="tagid" />
+            <generator class="increment" />
+        </id>
+        <many-to-one name="subTask" class="com.proj.bean.SubTask" fetch="select">
+            <column name="subtaskid" not-null="true" />
+        </many-to-one>
+        <property name="tagname" type="string">
+            <column name="tagname" length="64" not-null="true" />
+        </property>
+        <property name="tagcolorclass" type="string">
+            <column name="tagcolorclass" length="64" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

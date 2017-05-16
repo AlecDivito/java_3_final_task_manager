@@ -1,0 +1,24 @@
+body { 
+	margin: 0;  
+	clear: both;
+}
+header {
+	height: 75px;
+	background-color: black;
+}
+header h1 {
+    margin: 0;
+	padding: 20px;
+	color: white;
+	text-align: center;
+}
+
+#back {
+    z-index: 100;
+    position: fixed;
+    top: 0;
+    color: white;
+    background-color: black;
+    padding: 27.5px;
+}
+

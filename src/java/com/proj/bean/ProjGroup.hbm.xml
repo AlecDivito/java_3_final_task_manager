@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 20, 2016 9:57:50 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.proj.bean.ProjGroup" table="projGroup" catalog="Java3" optimistic-lock="version">
+        <id name="groupid" type="int">
+            <column name="groupid" />
+            <generator class="increment" />
+        </id>
+        <many-to-one name="project" class="com.proj.bean.Project" fetch="select">
+            <column name="projid" not-null="true" />
+        </many-to-one>
+        <many-to-one name="user" class="com.proj.bean.User" fetch="select">
+            <column name="userid" not-null="true" />
+        </many-to-one>
+        <property name="isAdmin" type="boolean">
+            <column name="isAdmin" not-null="true" />
+        </property>
+        <property name="status" type="string">
+            <column name="status" length="12" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

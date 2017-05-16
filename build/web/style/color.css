@@ -1,0 +1,18 @@
+.col-green  { background-color: green; }
+.col-yellow { background-color: yellow; }
+.col-orange { background-color: orange; }
+.col-red    { background-color: red; }
+.col-purple { background-color: purple; }
+.col-blue   { background-color: blue; }
+.col-lightblue  { background-color: lightblue; }
+.col-lime   { background-color: #32cd32; }
+.col-pink   { background-color: pink; }
+.col-black  { background-color: black; }
+.col-aqua   { background-color: aqua; }
+
+form p {
+	margin: 0;
+	padding: 0;
+	font-size: 12px;
+}
+

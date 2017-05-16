@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
+    <context-param> 
+        <description>Location to store uploaded file</description> 
+        <param-name>file-upload</param-name> 
+        <param-value>
+             /home/alecdivito/NetBeansProjects/Java3Project/build/web/images/
+         </param-value> 
+    </context-param>
+    
+    <error-page>
+        <error-code>404</error-code>
+        <location>/404Error.jsp</location>
+    </error-page>
+    
+    <login-config>
+        <auth-method>FORM</auth-method>
+        <form-login-config>
+            <form-login-page>/index.jsp</form-login-page>
+            <form-error-page>/index.jsp</form-error-page>
+        </form-login-config>
+    </login-config>
+    
+    <welcome-file-list>
+        <welcome-file>index.jsp</welcome-file>
+    </welcome-file-list>
+
+
+    <servlet>
+        <servlet-name>edit</servlet-name>
+        <servlet-class>com.proj.controller.edit</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>updateProfile</servlet-name>
+        <servlet-class>com.proj.controller.updateProfile</servlet-class>
+    </servlet>
+    
+    <servlet-mapping>
+        <servlet-name>edit</servlet-name>
+        <url-pattern>/edit</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>updateProfile</servlet-name>
+        <url-pattern>/updateProfile</url-pattern>
+    </servlet-mapping>
+    
+    <session-config>
+        <session-timeout>
+            30
+        </session-timeout>
+    </session-config>
+</web-app>
